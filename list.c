@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 struct node {
     int data;
@@ -9,15 +9,16 @@ struct node {
 void free_list(struct node *first) {
     struct node *it = first;
     while (it != NULL) {
-      free(it);
-      it = it->next;
+        free(it);
+        it = it->next;
     }
 }
 
 void print_list(struct node *first) {
     printf("{");
     for (struct node *it = first; it != NULL; it = it->next) {
-        if (it != first) printf(",");
+        if (it != first)
+            printf(",");
         printf("%d", it->data);
     }
     printf("}\n");
